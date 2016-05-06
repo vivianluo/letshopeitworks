@@ -1,10 +1,14 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
-
-# import scraperwiki
-# import lxml.html
-# import urllib2, lxml.etree
-#
+#All of the important imports
+import scraperwiki
+import lxml.html
+import urllib2, lxml.etree
+#URL
+url = 'https://drive.google.com/open?id=0B90m0udbKK0cMWpOTEZ2VGNDX1k'
+pdfdata = urllib2.urlopen(url).read() 
+xmldata = scraperwiki.pdftoxml(pdfdata) 
+root = lxml.etree.fromstring(xmldata) 
 # # Read in a page
 # html = scraperwiki.scrape("http://foo.com")
 #
