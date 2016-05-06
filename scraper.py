@@ -6,18 +6,18 @@ import lxml.html
 import urllib2, lxml.etree
 #URL
 url = 'https://drive.google.com/open?id=0B90m0udbKK0cMWpOTEZ2VGNDX1k'
-pdfdata = urllib2.urlopen(url).read() 
-xmldata = scraperwiki.pdftoxml(pdfdata) 
-root = lxml.etree.fromstring(xmldata) 
+pdfdata = urllib2.urlopen(url).read()
+xmldata = scraperwiki.pdftoxml(pdfdata)
+root = lxml.etree.fromstring(xmldata)
 # # Read in a page
 # html = scraperwiki.scrape("http://foo.com")
 #
 # # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
+root = lxml.html.fromstring(html)
+root.cssselect("div[align='left']")
 #
 # # Write out to the sqlite database using scraperwiki library
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
