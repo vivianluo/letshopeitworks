@@ -3,6 +3,7 @@
 
 # import scraperwiki
 # import lxml.html
+# import urllib2, lxml.etree
 #
 # # Read in a page
 # html = scraperwiki.scrape("http://foo.com")
